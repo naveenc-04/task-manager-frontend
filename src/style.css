@@ -1,0 +1,26 @@
+.task-card {
+  background: #f7f8fa;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+}
+
+button {
+  margin-right: 10px;
+  padding: 8px 14px;
+  background: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: #ff4d4d;
+}
+
+.completed-label {
+  color: green;
+  font-weight: bold;
+}
