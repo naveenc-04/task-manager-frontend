@@ -1,0 +1,3 @@
+.git\logs\HEAD:4ec25e1e9ba616959232d160b4fd7e6eeda7446e b60242dd8035c9c3f1dda2462e7e1b0fe2d4a717 Choudhary <alka.choudhary.ext@siemens.com> 1763318114 +0530	commit: Use VITE_API_URL instead of localhost
+.git\logs\refs\heads\main:4ec25e1e9ba616959232d160b4fd7e6eeda7446e b60242dd8035c9c3f1dda2462e7e1b0fe2d4a717 Choudhary <alka.choudhary.ext@siemens.com> 1763318114 +0530	commit: Use VITE_API_URL instead of localhost
+src\api.js:const baseURL = import.meta.env.VITE_API_URL || "http://localhost:5000";
