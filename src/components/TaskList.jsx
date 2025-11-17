@@ -27,17 +27,24 @@ export default function TaskList() {
       {tasks.map((task) => (
         <div
           key={task._id}
-          className="
+          className={`
             bg-white/60 backdrop-blur-xl shadow-lg 
             border border-white/40 rounded-xl 
-            p-5 mb-4 transition
-          "
+            p-5 mb-4 transition duration-200
+            ${task.completed ? "opacity-60" : ""}
+          `}
         >
-
           {/* Title */}
           <h3 className="text-xl font-semibold text-gray-800">
             {task.title}
           </h3>
+
+          {/* Completed Text (old feature you mentioned) */}
+          {task.completed && (
+            <p className="text-green-600 font-semibold mt-1">
+              Completed ✓
+            </p>
+          )}
 
           {/* Priority Badge */}
           <span
@@ -70,7 +77,6 @@ export default function TaskList() {
               Delete
             </button>
           </div>
-
         </div>
       ))}
     </div>
