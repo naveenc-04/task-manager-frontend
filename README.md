@@ -1,37 +1,57 @@
-Task Manager – Frontend
+# TaskFlow – Task Manager (Frontend)
 
-This is the frontend of the Task Manager application.
-Built using React (Vite) and Tailwind CSS.
-It communicates with the backend through REST APIs.
+This repository contains the **frontend** of the TaskFlow Task Manager application.  
+It is built using **React (Vite)** and **Tailwind CSS** and communicates with a deployed backend via REST APIs.
 
-Features:
-  1. Add tasks
-  2. Edit tasks
-  3. Mark tasks as completed
-  4. Delete tasks
-  5. Fetch tasks from backend API
-  6. Responsive layout
+The application allows users to create, view, and delete tasks in real time without page reloads.
 
-Tech Stack:
-  1. React (Vite)
-  2. Tailwind CSS
-  3. Axios
 
-Installation:
+## 🚀 Features
+
+- Add new tasks with priority
+- View all tasks fetched from backend API
+- Delete tasks
+- Display task status (default: Pending)
+- Responsive and clean UI
+- No page refresh (React state-based updates)
+
+---
+
+## 🛠 Tech Stack
+
+- React (Vite)
+- Tailwind CSS
+- JavaScript (ES6)
+- Fetch API
+
+---
+
+## ⚙️ Installation & Setup
+
+Clone the repository:
+
+```bash
 git clone https://github.com/naveenc-04/task-manager-frontend.git
 cd task-manager-frontend
+
+--
+
+Install dependencies:
+
 npm install
+
+
+Create a .env file in the root directory:
+
+VITE_API_URL=https://task-manager-backend-r94r.onrender.com
+
+
+Run the development server:
+
 npm run dev
 
-Environment Variable:
-Create a .env file:
-VITE_API_URL=http://localhost:5000
+🔗 Backend Repository
 
+The backend for this project is maintained separately and deployed on Render:
 
-
-Build (Production)
-npm run build
-
-Backend Repository
-
-https://github.com/naveenc-04/task-manager-backend
+👉https://github.com/naveenc-04/task-manager-backend
