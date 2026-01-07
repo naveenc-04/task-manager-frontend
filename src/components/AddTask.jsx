@@ -1,19 +1,22 @@
 import { useState } from "react";
-import { createTask } from "../api/tasks";
 
-export default function AddTask() {
+export default function AddTask({ onAddTask }) {
   const [title, setTitle] = useState("");
   const [priority, setPriority] = useState("Low");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!title.trim()) return;
 
-    await createTask({ title, priority, completed: false });
+    // send data to parent (App)
+    onAddTask({
+      title,
+      priority,
+      status: "Pending",
+    });
+
     setTitle("");
     setPriority("Low");
-
-    window.location.reload(); // reload tasks after adding
   };
 
   return (
@@ -21,19 +24,16 @@ export default function AddTask() {
       <h2 className="text-xl font-semibold mb-4 text-blue-700">Add New Task</h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">
-
-        {/* Title Input */}
         <input
           type="text"
-          className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-400 outline-none"
+          className="w-full border border-gray-300 rounded-lg p-3"
           placeholder="Task title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
 
-        {/* Priority */}
         <select
-          className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-400 outline-none"
+          className="w-full border border-gray-300 rounded-lg p-3"
           value={priority}
           onChange={(e) => setPriority(e.target.value)}
         >
@@ -42,10 +42,9 @@ export default function AddTask() {
           <option>High</option>
         </select>
 
-        {/* Button */}
         <button
           type="submit"
-          className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition"
+          className="w-full bg-green-600 text-white py-3 rounded-lg"
         >
           Add Task
         </button>
